@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 $LOAD_PATH << '.'
 require 'ruby_pro_data.rb'
+
 # ProductClass
 class Product
   def product_details(product)
