@@ -2,7 +2,7 @@
 
 # AllUsersData
 class UserData
-  @user_data = [
+  @@user_data = [
     { first_name: 'alex', last_name: 'newman', date_of_birth: '01-05-1982',
       address: 'sapna sangeeta', role: 'buyer' },
     { first_name: 'alex', last_name: 'Panc', date_of_birth: '12-04-1990',
@@ -16,18 +16,18 @@ class UserData
   ] # inputlist of userdata
 
   def alluser_data
-    @user_data
+    @@user_data
   end
 
   def fivthuser_data
-    @user_data[4]
+    @@user_data[4]
   end
 
   def secounduser_data
-    @user_data[1]
+    @@user_data[1]
   end
 
   def firstuser_data
-    @user_data[0]
+    @@user_data[0]
   end
 end

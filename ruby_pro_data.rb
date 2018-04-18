@@ -2,7 +2,7 @@
 
 # AllProductsData
 class ProductData
-  @product_data = [
+  @@product_data = [
     { name: 'bicycle', seller: 'alex', price: 3_000, category: 'vehicle' },
     { name: 'car', seller: 'meena', price: 2_500_00, category: 'vehicle' },
     { name: 'jeans', seller: 'prabhu', price: 1_800, category: 'clothes' },
@@ -25,6 +25,6 @@ class ProductData
     { name: 'barbi doll', seller: 'alex', price: 3_000, category: 'toys' }
   ] # inputlist of product data
   def allpro_data
-    @product_data
+    @@product_data
   end
 end

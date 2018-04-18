@@ -1,16 +1,17 @@
 
+
 $LOAD_PATH << '.'
 require 'ruby_user_data.rb'
 require 'date'
 
 # BuyerSellerClass
 class BuyerSeller
-  def user_details(user)
+  def user_details(users)
     # It will return list of user objects
     user_details = ''
-    user.each do |userno|
+    users.each do |userno|
       userno.each do |key, value|
-        user_details << "#{key} : #{value}"
+        user_details << "#{key} : #{value}" << '  '
       end
       user_details << "\n"
     end
@@ -33,15 +34,15 @@ class BuyerSeller
     'No detail Found'
   end
 
-  def user_dob(dob)
+  def user_dob(userdateofbirth)
     # It will return age of user after calculating from date_of_birth
-    Date.today.year - (Date.parse dob[:date_of_birth]).year
+    Date.today.year - (Date.parse userdateofbirth[:date_of_birth]).year
   end
 
-  def buyer_details_list(user)
+  def buyer_details_list(users)
     # It will return array of all the buyer objects
     user_buyer_name = ''
-    user.each do |userno|
+    users.each do |userno|
       userno.each do |_key, value|
         if value == 'buyer'
           user_buyer_name << userno[:first_name] << ' '
@@ -52,10 +53,10 @@ class BuyerSeller
     user_buyer_name
   end
 
-  def seller_details_list(user)
+  def seller_details_list(users)
     # It will return array of all the buyer objects
     user_seller_name = ''
-    user.each do |userno|
+    users.each do |userno|
       userno.each do |_key, value|
         if value == 'seller'
           user_seller_name << userno[:first_name] << ' '
@@ -66,10 +67,10 @@ class BuyerSeller
     user_seller_name
   end
 
-  def specific_user_details(user)
+  def specific_user_details(users)
     # It will return array of all the userobjects whose first name is alex
     specific_user_name = ''
-    user.each do |userno|
+    users.each do |userno|
       userno.each do |_key, value|
         specific_user_name << value << ' ' if userno[:first_name] == 'alex'
       end
