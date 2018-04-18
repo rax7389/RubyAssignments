@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 # AllUsersData
 class UserData
@@ -19,11 +19,11 @@ class UserData
     @@user_data
   end
 
-  def fivthuser_data
+  def fifthuser_data
     @@user_data[4]
   end
 
-  def secounduser_data
+  def seconduser_data
     @@user_data[1]
   end
 

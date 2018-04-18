@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 $LOAD_PATH << '.'
 require 'ruby_user_data.rb'
@@ -8,7 +8,7 @@ require 'date'
 class BuyerSeller
   def user_details(users)
     # It will return list of user objects
-    user_details = ''
+    user_details = []
     users.each do |userno|
       userno.each do |key, value|
         user_details << "#{key} : #{value}" << '  '
@@ -20,18 +20,22 @@ class BuyerSeller
 
   def user_buyer_name(user)
     # It will return the full name of buyer
+    buyer_name = []
     if user[:role] == 'buyer'
-      return user[:first_name] << ' ' << user[:last_name]
+      buyer_name << user[:first_name] << ' '
+      buyer_name << user[:last_name] << "\n"
     end
-    'No detail Found'
+    buyer_name
   end
 
   def user_seller_name(user)
     # It will return the full name of seller
-    if user[:role] == 'seller'
-      return user[:first_name] << ' ' << user[:last_name]
+    seller_name = []
+    if user[:role] == 'buyer'
+      seller_name << user[:first_name] << ' '
+      seller_name << user[:last_name] << "\n"
     end
-    'No detail Found'
+    seller_name
   end
 
   def user_dob(userdateofbirth)
@@ -41,11 +45,11 @@ class BuyerSeller
 
   def buyer_details_list(users)
     # It will return array of all the buyer objects
-    user_buyer_name = ''
+    user_buyer_name = []
     users.each do |userno|
       userno.each do |_key, value|
         if value == 'buyer'
-          user_buyer_name << userno[:first_name] << ' '
+          user_buyer_name << userno[:first_name]
           user_buyer_name << userno[:last_name] << "\n"
         end
       end
@@ -55,11 +59,11 @@ class BuyerSeller
 
   def seller_details_list(users)
     # It will return array of all the buyer objects
-    user_seller_name = ''
+    user_seller_name = []
     users.each do |userno|
       userno.each do |_key, value|
         if value == 'seller'
-          user_seller_name << userno[:first_name] << ' '
+          user_seller_name << userno[:first_name]
           user_seller_name << userno[:last_name] << "\n"
         end
       end
@@ -69,11 +73,12 @@ class BuyerSeller
 
   def specific_user_details(users)
     # It will return array of all the userobjects whose first name is alex
-    specific_user_name = ''
+    specific_user_name = []
     users.each do |userno|
       userno.each do |_key, value|
-        specific_user_name << value << ' ' if userno[:first_name] == 'alex'
+        specific_user_name << value if userno[:first_name] == 'alex'
       end
+      specific_user_name << "\n"
     end
     specific_user_name
   end

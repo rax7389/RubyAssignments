@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 $LOAD_PATH << '.'
 require 'ruby_buyer_seller.rb'
@@ -9,9 +9,9 @@ puts 'UserDetails:-'
 user_object = BuyerSeller.new
 puts user_object.user_details user_data_object.alluser_data
 puts "\nBuyerName:-"
-puts user_object.user_buyer_name user_data_object.fivthuser_data
+puts user_object.user_buyer_name user_data_object.fifthuser_data
 puts "\nSellerName:-"
-puts user_object.user_seller_name user_data_object.secounduser_data
+puts user_object.user_seller_name user_data_object.seconduser_data
 puts "\nDate of Birth:-"
 puts user_object.user_dob user_data_object.firstuser_data
 puts "\nBuyer Details:-"
